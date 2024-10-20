@@ -1,0 +1,2 @@
+npx create-react-app react-tinymce-form --template typescript
+https://create-react-app.dev/docs/getting-started
