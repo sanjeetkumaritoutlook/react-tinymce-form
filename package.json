@@ -1,6 +1,7 @@
 {
   "name": "react-tinymce-form",
   "version": "0.1.0",
+  "homepage": "https://sanjeetkumaritoutlook.github.io/react-tinymce-form",
   "private": true,
   "dependencies": {
     "@auth0/auth0-spa-js": "^2.1.3",
