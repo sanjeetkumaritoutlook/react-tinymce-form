@@ -4,7 +4,7 @@ import { Editor } from '@tinymce/tinymce-react';
 //https://www.digitalocean.com/community/tutorials/react-axios-react
 import axios from 'axios';
 import { lipapiUrl } from './utils/url-utils';
-import { useAuth0 } from './react-auth0-wrapper';
+//import { useAuth0 } from './react-auth0-wrapper';
 // import { ALERT_SEVERITY } from './FluidAlert';
 
 export interface EditorProps {

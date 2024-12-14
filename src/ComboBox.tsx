@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
 export function ComboBox(props: any, ref: any) {
-  const { value, allowInput, label } = props;
+  const { value } = props;
 
   const comboBoxInput: any = useRef();
 

@@ -1,5 +1,5 @@
-import React, { useState,useEffect, useRef,useContext }  from 'react';
-import logo from './logo.svg';
+import React, { useState,useEffect, useRef }  from 'react';
+//import logo from './logo.svg';
 import './App.css';
 import IncEditor from './IncEditor';
 import { ComboBox } from './ComboBox';
@@ -25,16 +25,16 @@ function App(props: any, ref: any) {
   const [name, setName] = useState<any | null>(null);
   //https://reactjs.org/link/controlled-components
   const [date, setDate] = useState<any | null>('');
-  const [comboBox, setComboBox] = useState<any | null>(null);
+  const [comboBox] = useState<any | null>(null);
   const handleSubmit = (e: any) => {
     addChoreLog([choreDesc, name, date, comboBox]);
     console.log('formData', e);
     e.preventDefault();
   };
-  const handleComboBox = (e: any) => {
-    // e.preventDefault();
-    console.log('combo-box', e);
-  };
+  // const handleComboBox = (e: any) => {
+  //   // e.preventDefault();
+  //   console.log('combo-box', e);
+  // };
 
   const [data, setData] = useState({});
 
