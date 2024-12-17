@@ -1,0 +1,58 @@
+1. Using Custom Scripts
+You can create your own script to automate the generation of React components. For example:
+
+Example Script in Node.js
+Create a generateComponent.js script:
+-----
+const fs = require('fs');
+const path = require('path');
+
+const componentName = process.argv[2];
+
+if (!componentName) {
+    console.error("Please provide a component name.");
+    process.exit(1);
+}
+
+const componentDir = path.join(__dirname, 'src', 'components', componentName);
+
+if (fs.existsSync(componentDir)) {
+    console.error("Component already exists!");
+    process.exit(1);
+}
+
+fs.mkdirSync(componentDir);
+
+const componentContent = `
+import React from 'react';
+
+const ${componentName} = () => {
+    return (
+        <div>
+            <h1>${componentName}</h1>
+        </div>
+    );
+};
+
+export default ${componentName};
+`;
+
+fs.writeFileSync(
+    path.join(componentDir, `${componentName}.jsx`),
+    componentContent.trim()
+);
+
+console.log(`${componentName} component created at ${componentDir}`);
+
+
+----Run it with Node.js:
+
+node generateComponent.js MyComponent
+
+---
+This will create a new directory src/components/MyComponent with a file MyComponent.jsx containing the component boilerplate.
+-----
+you can change it to .tsx extension also accordingly
+
+
+
