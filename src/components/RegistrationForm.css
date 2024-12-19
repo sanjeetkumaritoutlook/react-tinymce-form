@@ -1,0 +1,29 @@
+form.registration-form {
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+ .registration-form label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+  .registration-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .registration-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .registration-form button:hover {
+    background-color: #0056b3;
+  }
+  
