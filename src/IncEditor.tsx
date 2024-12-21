@@ -7,17 +7,8 @@ import { lipapiUrl } from './utils/url-utils';
 //import { useAuth0 } from './react-auth0-wrapper';
 // import { ALERT_SEVERITY } from './FluidAlert';
 
-export interface EditorProps {
-    id: string;
-    inline?: boolean;
-    placeholder: string;
-    height?: string;
-    onChange: Function;
-    key?: string;
-    value?: string;
-    onUploadClicked?: Function;
-  }
-  
+ import { EditorProps } from './components/types'; // Assuming you have a types file where Todo is defined
+ 
   export default function IncEditor(props: EditorProps) {
     const editorRef = useRef<any>(null);
     //const { getTokenSilently } = useAuth0();

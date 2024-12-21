@@ -9,7 +9,7 @@ import NormalForm from './NormalForm';
 import RegistrationForm from './RegistrationForm'; // Adjust the path as needed
 import {formSchema} from './../utils/formschema';
 import DynamicForm from './DynamicForm';
-
+import ParentCrud from './ParentCrud';
 const Navigation = () => {
  const setDescription = (e: any) => {
         console.log('react rtf');
@@ -43,6 +43,9 @@ return (
        <li>
          <Link to="/normal-form">Normal form</Link>
        </li>
+       <li>
+         <Link to="/crud-form">CRUD</Link>
+       </li>
      </ul>
    </nav>
 
@@ -58,6 +61,7 @@ return (
      <Route path="/normal-form"  element={<NormalForm/>} />
      <Route path="/user-registration"  element={<RegistrationForm/>} />
      <Route path="/big-form"  element={<DynamicForm schema={formSchema} onSubmit={handleFormSubmit} />} />
+     <Route path="/crud-form"  element={<ParentCrud/>} />
    </Routes>
  </Router>
     </div>
