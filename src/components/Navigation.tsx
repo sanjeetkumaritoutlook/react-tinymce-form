@@ -1,15 +1,20 @@
 
-import React,{ useState }  from 'react';
+import React,{ useState,lazy, Suspense }  from 'react';
 //https://stackoverflow.com/questions/69843615/switch-is-not-exported-from-react-router-dom
 //https://www.w3schools.com/react/react_router.asp
 import { BrowserRouter as Router,   Routes,Route, Link } from "react-router-dom";
 import IncEditor from './../IncEditor';
 import { ComboBox } from './../ComboBox';
-import NormalForm from './NormalForm';
-import RegistrationForm from './RegistrationForm'; // Adjust the path as needed
+import NormalForm from './NormalForm'; // Eagerly loaded
+
 import {formSchema} from './../utils/formschema';
 import DynamicForm from './DynamicForm';
 import ParentCrud from './ParentCrud';
+import Spinner from './Spinner';
+//import RegistrationForm from './RegistrationForm'; // Adjust the path as needed
+const RegistrationForm = lazy(() => import('./RegistrationForm')); // Lazy-loaded
+//const RegistrationForm = React.lazy(() => import('./RegistrationForm')); // Lazy-loaded
+
 const Navigation = () => {
  const setDescription = (e: any) => {
         console.log('react rtf');
@@ -59,7 +64,12 @@ return (
         allowInput={'true'}
         label="Album:"/>} />
      <Route path="/normal-form"  element={<NormalForm/>} />
-     <Route path="/user-registration"  element={<RegistrationForm/>} />
+     <Route
+      path="/user-registration"  element={
+      <Suspense fallback={<Spinner/>}>
+      <RegistrationForm/>
+      </Suspense>
+      } />
      <Route path="/big-form"  element={<DynamicForm schema={formSchema} onSubmit={handleFormSubmit} />} />
      <Route path="/crud-form"  element={<ParentCrud/>} />
    </Routes>
