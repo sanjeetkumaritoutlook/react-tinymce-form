@@ -11,6 +11,7 @@ import {formSchema} from './../utils/formschema';
 import DynamicForm from './DynamicForm';
 import ParentCrud from './ParentCrud';
 import Spinner from './Spinner';
+import ErrorMessage from './ErrorMessage';
 //import RegistrationForm from './RegistrationForm'; // Adjust the path as needed
 const RegistrationForm = lazy(() => import('./RegistrationForm')); // Lazy-loaded
 //const RegistrationForm = React.lazy(() => import('./RegistrationForm')); // Lazy-loaded
@@ -51,6 +52,9 @@ return (
        <li>
          <Link to="/crud-form">CRUD</Link>
        </li>
+       <li>
+         <Link to="/error-message">Error</Link>
+       </li>
      </ul>
    </nav>
 
@@ -72,6 +76,7 @@ return (
       } />
      <Route path="/big-form"  element={<DynamicForm schema={formSchema} onSubmit={handleFormSubmit} />} />
      <Route path="/crud-form"  element={<ParentCrud/>} />
+     <Route path="/error-message"  element={<ErrorMessage message="An error occurred!" />} />
    </Routes>
  </Router>
     </div>
