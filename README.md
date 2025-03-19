@@ -19,6 +19,26 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### jest testing in react
+
+npm install --save-dev @testing-library/react @testing-library/jest-dom jest
+
+For TypeScript projects, also install:
+
+npm install --save-dev @types/jest
+
+npm test
+
+npm test -- --coverage
+
+npm test -- --watch
+
+npm test ErrorMessage.test.tsx
+
+Jest's built-in defaults and React's testing setup. Here's why:
+
+If your project was created using Create React App (CRA), it comes with Jest preconfigured.
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
